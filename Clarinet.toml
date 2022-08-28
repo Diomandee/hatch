@@ -1,0 +1,43 @@
+[project]
+name = "hatch"
+authors = []
+description = ""
+telemetry = true
+requirements = []
+cache_dir = "/Users/mohameddiomande/.clarinet/cache"
+[contracts.NFTWallet]
+path = "contracts/NFTWallet.clar"
+depends_on = []
+
+[contracts.ReserveWallet]
+path = "contracts/ReserveWallet.clar"
+depends_on = []
+
+[contracts.abc]
+path = "contracts/abc.clar"
+depends_on = ["sip010-ft-trait"]
+
+[contracts.chain-usda]
+path = "contracts/chain-usda.clar"
+depends_on = ["sip010-ft-trait"]
+
+[contracts.hatch]
+path = "contracts/hatch.clar"
+depends_on = ["sip010-ft-trait"]
+
+[contracts.sip010-ft-trait]
+path = "contracts/sip010-ft-trait.clar"
+depends_on = []
+
+[repl]
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
